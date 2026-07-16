@@ -1,0 +1,28 @@
+﻿# Internal and local working areas
+.codex/
+.codex_review/
+.agents/
+feedback/
+input/
+output/
+resource/
+
+# Local app/editor state
+**/.obsidian/
+.vscode/
+.idea/
+
+# Local logs and scratch
+*.log
+*.tmp
+
+# Large/local source artifacts kept outside public repo by default
+*.pdf
+*.jpeg
+*.jpg
+*.png
+
+# OneDrive/OS artifacts
+*.lnk
+Thumbs.db
+Desktop.ini
