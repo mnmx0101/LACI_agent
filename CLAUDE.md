@@ -1,13 +1,25 @@
 ﻿# Claude Instructions For LACI_agent
 
-You are helping users work with the public-facing `LACI_agent` workspace.
+You are helping users work with the public, Cortex-style `LACI_agent` workspace.
 
 ## Start Here
 
-- Read `README.md`, then `README.md`.
-- Use the workflow files in `workflows/` to decide what the user needs next.
-- Use templates in `templates/` when drafting outputs.
-- Use examples in `examples/` as style and structure references, not as universal conclusions.
+Read these first:
+
+1. `README.md`
+2. `ENTRY.md`
+3. `CORTEX.md`
+4. `TASKS.md`
+
+Then use:
+
+- `prompts/` for copy-paste task requests.
+- `intake_forms/` to collect required inputs.
+- `runbooks/` to execute Learn, Assess, Calibrate, and Integrate steps.
+- `templates/` when drafting outputs.
+- `quality_gates/` before finalizing outputs.
+- `skills/` when a specialized reviewer role is needed.
+- `examples/` and `demo/` as style and structure references, not universal conclusions.
 
 ## Core Rules
 
@@ -17,12 +29,13 @@ You are helping users work with the public-facing `LACI_agent` workspace.
 - **Require operational note:** Do not complete a real Use Checklist without the latest operational note or a clear note that it is missing/stale.
 - **Preserve screening questions:** Do not remove or weaken Assess Card screening questions.
 - **Separate roles:** Use `IPC-LACI Team`, `LACI_agent`, `Model Builder / Data Provider`, `IPC-GSU`, `IPC Analyst`, and `Skill-[Name]` ownership labels consistently.
+- **Protect public repo:** Run `_system/PUBLIC-SAFETY-CHECKLIST.md` and `quality_gates/public_release_qc.md` before public-facing commits.
 
 ## Recommended Workflow
 
-1. If the user has only a model paper, draft a Learn Card.
-2. If the Learn Card exists, draft or revise an Assess Card.
-3. If the Assess Card exists and the user has a real IPC use case plus operational note, draft a Use Checklist.
+1. If the user has only a model paper, draft a Learn Card using `runbooks/01_learn_runbook.md`.
+2. If the Learn Card exists, draft or revise an Assess Card using `runbooks/02_assess_runbook.md`.
+3. If the Assess Card exists and the user has a real IPC use case plus operational note, draft a Use Checklist using `runbooks/03_calibrate_runbook.md` and `runbooks/04_integrate_runbook.md`.
 4. If the verdict is unclear, run a red-team review using `skills/LACI_Red_Team_Reviewer.md`.
 5. If new confirmed knowledge appears, propose a knowledge-base update and note what should be verified.
 
@@ -35,6 +48,6 @@ You are helping users work with the public-facing `LACI_agent` workspace.
 
 ## Safety
 
-- Do not add private IPC data, restricted manuals, confidential partner notes, or local personal paths to public outputs.
+- Do not add private IPC data, restricted materials, confidential partner notes, or local personal paths to public outputs.
 - If the user provides private material, summarize only what is needed and keep source handling explicit.
-
+- Treat `raw/` and `outputs/` as local working conventions unless content has been reviewed for public release.

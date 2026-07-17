@@ -1,20 +1,34 @@
 ﻿# LACI_agent
 
-**LACI_agent** is a public-facing workspace for developing, testing, and applying LACI: **Learn, Assess, Calibrate, and Integrate** model-generated outputs for IPC-supporting workflows.
+**LACI_agent** is a public, Cortex-style agent workspace for developing, testing, and applying LACI: **Learn, Assess, Calibrate, and Integrate** model-generated outputs for IPC-supporting workflows. It gives AI assistants structured instructions, skills, templates, examples, and knowledge-base anchors so they can help users draft LACI artifacts consistently.
 
 This repository is intentionally flat: after cloning, the main content is visible immediately in the repo root.
 
 ## Start Here
 
 1. **Read this page first.** It is the main front door for the repo.
-2. **Choose your tool:**
+2. **Open the task entrypoint:** [ENTRY.md](ENTRY.md) helps you choose what to do based on what material you have.
+3. **Understand the operating concept:** [CORTEX.md](CORTEX.md) explains how this repo functions as an agent workspace rather than a standalone app.
+4. **Choose your assistant:**
    - Claude users: read [CLAUDE.md](CLAUDE.md), then [setup/CLAUDE.md](setup/CLAUDE.md).
    - Codex users: read [AGENTS.md](AGENTS.md), then [setup/CODEX.md](setup/CODEX.md).
-3. **Choose your task:**
+   - Cursor or other assistants: read [README.md](README.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
+5. **Choose your task:**
    - Model paper -> Learn Card.
    - Learn Card -> Assess Card.
    - Assess Card + operational note + use case -> IPC Analysis Use Checklist.
-4. **Keep outputs local unless your team decides to share them.** Use an `outputs/` folder locally when drafting new cards or reviews.
+6. **Use the working conventions:** put local inputs under `raw/` and local generated artifacts under `outputs/`. Keep private material out of public commits.
+
+## Cortex-Style Operating Layer
+
+- **Entrypoints:** [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
+- **System playbooks:** [_system/](_system/) for install, phase-1 testing, agent/skill routing, and public-safety checks.
+- **Prompts:** [prompts/](prompts/) for copy-paste tasks across Codex, Claude, Cursor, ChatGPT, and similar tools.
+- **Intake forms:** [intake_forms/](intake_forms/) for model papers, operational notes, use cases, and context-specific limitation review.
+- **Runbooks:** [runbooks/](runbooks/) for the Learn, Assess, Calibrate, and Integrate stages.
+- **Quality gates:** [quality_gates/](quality_gates/) for pre-finalization checks.
+- **Local work areas:** [raw/](raw/) and [outputs/](outputs/) are conventions for local/private work, not public data dumps.
+- **Demo path:** [demo/](demo/) gives a first walkthrough.
 
 ## What Is LACI?
 
@@ -130,18 +144,30 @@ This repository is intentionally flat: after cloning, the main content is visibl
 
 ## Repository Map
 
+- [Entry](ENTRY.md)
+- [Cortex Operating Concept](CORTEX.md)
+- [Task Patterns](TASKS.md)
+- [System Playbooks](_system/)
 - [Core Documents](core_documents/)
 - [Templates](templates/)
 - [Workflows](workflows/)
+- [Runbooks](runbooks/)
+- [Prompt Library](prompts/)
+- [Intake Forms](intake_forms/)
+- [Quality Gates](quality_gates/)
 - [Knowledge Base](knowledge_base/)
 - [Skills / Role Cards](skills/)
 - [Partner Submission](partner_submission/)
 - [Decision Support](decision_support/)
 - [Examples](examples/)
+- [Demo](demo/)
 - [Sources](sources/)
+- [Local Raw Input Convention](raw/)
+- [Local Output Convention](outputs/)
 - [Setup Guides](setup/)
-
 ## Data And Source Safety
 
 This repository is public. Do not commit confidential IPC analysis, restricted partner material, unpublished operational data, local machine paths, or private notes. The IPC Technical Manual is included as a core source reference only because the repository owner indicated the repo is public and requested inclusion.
+
+
 

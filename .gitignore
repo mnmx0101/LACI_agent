@@ -28,3 +28,13 @@ resource/
 Thumbs.db
 Desktop.ini
 
+
+# Local LACI_agent working material: keep folder conventions, ignore private contents
+raw/**/*
+!raw/**/
+!raw/**/README.md
+!raw/**/.gitkeep
+outputs/**/*
+!outputs/**/
+!outputs/**/README.md
+!outputs/**/.gitkeep
