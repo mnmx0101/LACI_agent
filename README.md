@@ -1,14 +1,14 @@
 ﻿# LACI_agent
 
-**LACI_agent** is a public, Cortex-style agent workspace for developing, testing, and applying LACI: **Learn, Assess, Calibrate, and Integrate** model-generated outputs for IPC-supporting workflows. It gives AI assistants structured instructions, skills, templates, examples, and knowledge-base anchors so they can help users draft LACI artifacts consistently.
+**LACI_agent** is a public, **Cortex**-style agent workspace for developing, testing, and applying LACI: **Learn, Assess, Calibrate, and Integrate** model-generated outputs for IPC-supporting workflows. It gives AI assistants structured instructions, skills, templates, examples, and knowledge-base anchors so they can help users draft LACI artifacts consistently.
 
 This repository is intentionally flat: after cloning, the main content is visible immediately in the repo root.
 
-## What Does Cortex Mean Here?
+## What is Cortex?
 
-In this repo, **Cortex** does not mean a separate software product. It means an organized working layer for AI-assisted work: the repo gives an assistant shared memory, task routes, role instructions, templates, prompts, examples, and quality checks so it can help users run LACI work in a consistent way.
+**Cortex** is an organized working layer for AI-assisted work: the repo gives an assistant shared memory, task routes, role instructions, templates, prompts, examples, and quality checks so it can help users run LACI work in a consistent way.
 
-A Cortex-style workspace usually has:
+The workspace usually has:
 
 - **Context:** Core documents and knowledge-base anchors the assistant should understand.
 - **Procedures:** Runbooks, workflows, and quality gates that tell the assistant how to work.
