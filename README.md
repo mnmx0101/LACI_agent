@@ -21,24 +21,26 @@ So, `LACI_agent` is called Cortex-style because it is designed to make an AI ass
 ## Start Here
 
 1. **Read this page first.** It is the main front door for the repo.
-2. **Open the task entrypoint:** [ENTRY.md](ENTRY.md) helps you choose what to do based on what material you have.
-3. **Understand the operating concept:** [CORTEX.md](CORTEX.md) explains how this repo functions as an agent workspace rather than a standalone app.
-4. **Choose your assistant:**
+2. **Identify role and goal:** open [ROLE_ROUTER.md](ROLE_ROUTER.md). LACI_agent should ask who is using the tool and what they want to do before routing to forms or templates.
+3. **Open the task entrypoint:** [ENTRY.md](ENTRY.md) helps you choose the right path after role and goal are clear.
+4. **Understand the operating concept:** [CORTEX.md](CORTEX.md) explains how this repo functions as an agent workspace rather than a standalone app.
+5. **Choose your assistant:**
    - Claude users: read [CLAUDE.md](CLAUDE.md), then [setup/CLAUDE.md](setup/CLAUDE.md).
    - Codex users: read [AGENTS.md](AGENTS.md), then [setup/CODEX.md](setup/CODEX.md).
-   - Cursor or other assistants: read [README.md](README.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
-5. **Choose your task:**
-   - Model paper -> Learn Card.
-   - Learn Card -> Assess Card.
-   - Assess Card + operational note + use case -> IPC Analysis Use Checklist.
-6. **Use the working conventions:** put local inputs under `raw/` and local generated artifacts under `outputs/`. Keep private material out of public commits.
+   - Cursor or other assistants: read [README.md](README.md), [ROLE_ROUTER.md](ROLE_ROUTER.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
+6. **Choose your task:**
+   - IPC-LACI Team starting from scratch -> point to model paper/public documentation.
+   - Model Builder / Data Provider -> draft, verify, or update cards and operational details.
+   - IPC-GSU -> review IPC fit, calibration logic, and knowledge-base implications.
+   - IPC Analyst -> complete Use Checklist and final case-specific verdict.
+7. **Use the working conventions:** put local inputs under `raw/` and local generated artifacts under `outputs/`. Keep private material out of public commits.
 
 ## Cortex-Style Operating Layer
 
-- **Entrypoints:** [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
+- **Entrypoints:** [ROLE_ROUTER.md](ROLE_ROUTER.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
 - **System playbooks:** [_system/](_system/) for install, phase-1 testing, agent/skill routing, and public-safety checks.
 - **Prompts:** [prompts/](prompts/) for copy-paste tasks across Codex, Claude, Cursor, ChatGPT, and similar tools.
-- **Intake forms:** [intake_forms/](intake_forms/) for model papers, operational notes, use cases, and context-specific limitation review.
+- **Intake forms:** [intake_forms/](intake_forms/) for structured collection. Model-paper intake can be assistant-prefilled; operational-note and use-case details are required for current-use checklist work.
 - **Runbooks:** [runbooks/](runbooks/) for the Learn, Assess, Calibrate, and Integrate stages.
 - **Quality gates:** [quality_gates/](quality_gates/) for pre-finalization checks.
 - **Local work areas:** [raw/](raw/) and [outputs/](outputs/) are conventions for local/private work, not public data dumps.
@@ -50,6 +52,18 @@ So, `LACI_agent` is called Cortex-style because it is designed to make an AI ass
 - **Assess:** Evaluate technical credibility, documentation quality, IPC relevance, known limitations, and context-specific suitability.
 - **Calibrate:** Translate assessed model outputs into bounded IPC-facing interpretation rules, caveats, and non-use constraints.
 - **Integrate:** Decide whether and how the output can be considered in an IPC-supporting workflow for a defined use case.
+
+## Role-Based Entry Points
+
+| Role | Typical goal | Starting point |
+| :--- | :--- | :--- |
+| **IPC-LACI Team** | Review a model from scratch; draft or update Learn + Assess Cards; ingest operational notes to prepare checklist inputs | Model paper / public technical documentation |
+| **Model Builder / Data Provider** | Draft, verify, or update Learn/Assess Cards and operational notes; confirm technical facts and model limitations | Model paper, existing draft card, technical documentation, operational note |
+| **IPC-GSU** | Review IPC fit, process alignment, limitation matching, calibration logic, and knowledge-base updates | Assess Card, operational note, IPC context |
+| **IPC Analyst** | Complete case-specific Use Checklist and final verdict for a defined IPC application/use case | Use case definition, latest operational note, Assess Card |
+| **Skill Reviewer** | Run red-team, evidence audit, document harmonization, input triage, or ledger update | Existing draft artifact or raw input |
+
+Before asking for files, LACI_agent should explain which LACI stage needs each input and whether the input is required now or later.
 
 ## I Want To...
 
@@ -75,7 +89,7 @@ So, `LACI_agent` is called Cortex-style because it is designed to make an AI ass
 - **IPC-GSU:** Manages IPC-facing knowledge, process alignment, context-specific review standards, and the knowledge base used to guide analysts.
 - **IPC-LACI Team:** Supports technical verification, documentation quality, reproducibility checks, workflow integrity, and implementation readiness.
 - **LACI_agent:** Drafts structured cards, organizes evidence, applies templates, routes tasks to skills, and prepares decision-support outputs for human review.
-- **Model Builder / Data Provider:** Provides documentation, operational notes, implementation clarification, and factual verification.
+- **Model Builder / Data Provider:** Can draft, verify, or update Learn/Assess Cards and operational notes; provides technical documentation, implementation clarification, performance interpretation, known limitations, and factual verification.
 - **Skills:** Specialized role cards used by LACI_agent and reviewers. Skill-owned tasks are labeled as `Skill-[Name]` and linked below.
 
 ## LACI Workflow
@@ -158,6 +172,7 @@ So, `LACI_agent` is called Cortex-style because it is designed to make an AI ass
 
 ## Repository Map
 
+- [Role Router](ROLE_ROUTER.md)
 - [Entry](ENTRY.md)
 - [Cortex Operating Concept](CORTEX.md)
 - [Task Patterns](TASKS.md)

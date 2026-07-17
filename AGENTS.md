@@ -7,9 +7,10 @@ This repository contains the public, Cortex-style `LACI_agent` workspace for dev
 Read these first:
 
 1. `README.md` for the public front door.
-2. `ENTRY.md` for choosing the task path.
-3. `CORTEX.md` for the operating concept.
-4. `TASKS.md` for common task patterns.
+2. `ROLE_ROUTER.md` for identifying user role and goal.
+3. `ENTRY.md` for choosing the task path after role and goal are clear.
+4. `CORTEX.md` for the operating concept.
+5. `TASKS.md` for common task patterns.
 
 Then use:
 
@@ -17,16 +18,29 @@ Then use:
 - **Runbooks:** `runbooks/` for step-by-step execution.
 - **Templates:** `templates/` for artifact structure.
 - **Prompts:** `prompts/` for copy-paste task requests.
-- **Intake forms:** `intake_forms/` for required inputs.
+- **Intake forms:** `intake_forms/` for structured collection. For model papers, prefill from the source when possible; for final Use Checklists, require the use case definition and latest operational note.
 - **Quality gates:** `quality_gates/` before finalizing.
 - **Skills:** `skills/` for specialized role procedures.
 - **Examples:** `examples/` and `demo/` as demonstrations, not binding decisions.
 
+## First Response Rule
+
+If the user has not stated their role and goal, ask for both before routing. Briefly explain available roles:
+
+- **IPC-LACI Team:** start or update model review packages from model paper/public documentation and operational notes.
+- **Model Builder / Data Provider:** draft, verify, or update Learn/Assess Cards, operational notes, performance details, limitations, and implementation details.
+- **IPC-GSU:** review IPC fit, calibration logic, context-specific limitation matching, and knowledge-base implications.
+- **IPC Analyst:** complete a use-specific checklist and issue the final case-specific verdict.
+- **Skill Reviewer:** run red-team review, evidence audit, harmonization, input triage, or ledger update.
+
+Before requesting files or forms, explain which LACI stage needs each input and whether it is required now or later.
+
 ## Operating Rules
 
 - Never state or imply that model output replaces IPC consensus classification.
-- Learn and Assess Cards can be drafted by `LACI_agent` / `IPC-LACI Team`, but model builders or data providers verify technical facts before finalization.
-- A Use Checklist requires a user-provided use case definition and the latest operational note.
+- Learn and Assess Cards can be drafted by `LACI_agent`, `IPC-LACI Team`, or Model Builder / Data Provider, but technical facts should be verified by model builders or data providers before finalization.
+- Model Builder / Data Provider can use LACI_agent to draft cards, but their distinctive responsibility is technical verification and correction of model facts, performance interpretation, operational details, and known limitations.
+- A final Use Checklist requires a user-provided use case definition and the latest operational note.
 - If either the use case or operational note is missing, mark the checklist preliminary and request the missing item.
 - Preserve all Assess Card screening questions unless the user explicitly changes the template governance.
 - Keep `IPC-GSU` responsible for IPC-facing knowledge/process alignment and `IPC Analyst` responsible for case-specific final verdicts.
@@ -35,6 +49,7 @@ Then use:
 ## When Asked To Draft
 
 - Use the relevant template and runbook rather than inventing a new structure.
+- For model-paper work, prefill model-paper intake from the source; do not require users to manually fill it before starting.
 - Save local drafts under the appropriate `outputs/` subfolder if the user asks for files.
 - Put raw local materials under the appropriate `raw/` subfolder when needed.
 - Use examples only as demonstrations, not as universal conclusions.
@@ -42,7 +57,9 @@ Then use:
 
 ## Suggested Routing
 
-- **Model paper only:** use `prompts/learn_card_from_model_paper.md`, `runbooks/01_learn_runbook.md`, and `quality_gates/learn_card_qc.md`.
+- **Role and goal unclear:** use `ROLE_ROUTER.md` first.
+- **IPC-LACI Team starting from model paper:** use `prompts/learn_card_from_model_paper.md`, `runbooks/01_learn_runbook.md`, and `quality_gates/learn_card_qc.md`.
+- **Model Builder / Data Provider drafting or verifying:** use the relevant Learn/Assess prompt plus `skills/LACI_Model_Builder_Reviewer.md`.
 - **Learn Card exists:** use `prompts/assess_card_from_learn_card.md`, `runbooks/02_assess_runbook.md`, and `quality_gates/assess_card_qc.md`.
 - **Operational note + use case:** use `prompts/use_checklist_from_operational_note.md`, `runbooks/03_calibrate_runbook.md`, `runbooks/04_integrate_runbook.md`, and `quality_gates/use_checklist_qc.md`.
 - **Known limitation matching:** use `intake_forms/context_specific_limitation_review.md`.
@@ -56,3 +73,4 @@ Then use:
 - Keep public outputs free of internal/private workspace paths and local machine references.
 - Use relative links within the repo.
 - Treat `raw/` and `outputs/` as local conventions; commit only placeholders or public-safe examples.
+

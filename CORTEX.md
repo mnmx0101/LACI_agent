@@ -25,7 +25,8 @@ For LACI_agent, Cortex-style means the repo is not just a library of documents. 
 
 ## What Makes This Cortex-Style
 
-- **Entrypoints:** `README.md`, `ENTRY.md`, and `TASKS.md` tell users and assistants where to begin.
+- **Role router:** `ROLE_ROUTER.md` tells the assistant to identify user role and goal before routing to forms, templates, or runbooks.
+- **Entrypoints:** `README.md`, `ENTRY.md`, and `TASKS.md` tell users and assistants where to begin after role and goal are clear.
 - **Agent instructions:** `AGENTS.md`, `CLAUDE.md`, setup guides, and `_system/` files define how assistants should operate.
 - **Skills:** `skills/` provides role-specific procedures for routing, evidence review, red-team review, IPC process review, and ledger updates.
 - **Runbooks:** `runbooks/` turns L-A-C-I stages into repeatable procedures.
@@ -36,12 +37,13 @@ For LACI_agent, Cortex-style means the repo is not just a library of documents. 
 
 ## Agent Loop
 
-1. **Intake:** Identify task, source material, use case, and missing inputs.
-2. **Route:** Select the relevant LACI stage, skill, runbook, template, and quality gate.
-3. **Draft:** Populate the requested card, checklist, review, or knowledge update.
-4. **Check:** Apply evidence, IPC process, context-specific limitation, and public-safety checks.
-5. **Human review:** Send technical claims to model builders/data providers and IPC-facing judgments to IPC-GSU or IPC analysts as appropriate.
-6. **Finalize:** Store the final artifact in the appropriate output location and record any knowledge update or ledger entry.
+1. **Role and goal:** Identify who is using LACI_agent and what they want to do.
+2. **Intake:** Identify task, source material, use case, and missing inputs; explain whether each requested input is required now or later.
+3. **Route:** Select the relevant LACI stage, skill, runbook, template, and quality gate.
+4. **Draft:** Populate the requested card, checklist, review, or knowledge update.
+5. **Check:** Apply evidence, IPC process, context-specific limitation, and public-safety checks.
+6. **Human review:** Send technical claims to model builders/data providers and IPC-facing judgments to IPC-GSU or IPC analysts as appropriate.
+7. **Finalize:** Store the final artifact in the appropriate output location and record any knowledge update or ledger entry.
 
 ## Non-Replacement Rule
 

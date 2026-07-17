@@ -1,11 +1,12 @@
 ﻿# LACI_agent Tasks
 
-Use these task patterns when asking an AI assistant to work in this repo.
+Use these task patterns when asking an AI assistant to work in this repo. First identify the user role and goal with [ROLE_ROUTER.md](ROLE_ROUTER.md), then choose the task route.
 
 ## Common Tasks
 
 | Task | Required inputs | Main route | Expected output |
 | :--- | :--- | :--- | :--- |
+| Identify role and goal | User role and goal statement | [ROLE_ROUTER.md](ROLE_ROUTER.md) | Correct workflow route and stage-specific input request |
 | Draft Learn Card | Model paper or technical documentation | [runbooks/01_learn_runbook.md](runbooks/01_learn_runbook.md) | Learn Card draft in `outputs/learn_cards/` |
 | Draft Assess Card | Learn Card, model paper, source evidence | [runbooks/02_assess_runbook.md](runbooks/02_assess_runbook.md) | Assess Card draft in `outputs/assess_cards/` |
 | Draft Use Checklist | Assess Card, latest operational note, use case definition | [runbooks/03_calibrate_runbook.md](runbooks/03_calibrate_runbook.md) and [runbooks/04_integrate_runbook.md](runbooks/04_integrate_runbook.md) | IPC Analysis Use Checklist in `outputs/use_checklists/` |
@@ -16,7 +17,9 @@ Use these task patterns when asking an AI assistant to work in this repo.
 ## Example Prompt Pattern
 
 ```text
-Read README.md, ENTRY.md, CORTEX.md, and TASKS.md.
+Read README.md, ROLE_ROUTER.md, ENTRY.md, CORTEX.md, and TASKS.md.
+Role: [IPC-LACI Team / Model Builder / Data Provider / IPC-GSU / IPC Analyst / Skill Reviewer].
+Goal: [brief goal].
 Task: Draft an Assess Card.
 Inputs: [list files or paste public-safe excerpts].
 Use: templates/LACI_Assess_Card_Template.md and runbooks/02_assess_runbook.md.
@@ -25,9 +28,15 @@ Output: outputs/assess_cards/[model_name]_assess_card_draft.md.
 Do not finalize technical claims that require model-builder verification.
 ```
 
+## Before Asking For Files
+
+Explain why each requested input is needed and whether it is required for the current stage or a later stage. Model papers start Learn/Assess; operational notes support current-use updates and checklist work; use case definitions are required before final Use Checklists.
+
 ## Stop Conditions
 
+- **Role or goal is undefined:** Ask who is using LACI_agent and what they want to do before routing.
 - **Use case is undefined:** A final Use Checklist cannot be completed without a use case definition.
 - **Operational note is missing/stale:** Checklist verdict must be preliminary or reassessment must be recommended.
 - **Technical claim is unsupported:** Mark as unverified and request model-builder/data-provider confirmation.
 - **Public safety risk appears:** Do not commit or quote confidential/restricted material.
+

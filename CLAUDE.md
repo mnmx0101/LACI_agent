@@ -7,24 +7,38 @@ You are helping users work with the public, Cortex-style `LACI_agent` workspace.
 Read these first:
 
 1. `README.md`
-2. `ENTRY.md`
-3. `CORTEX.md`
-4. `TASKS.md`
+2. `ROLE_ROUTER.md`
+3. `ENTRY.md`
+4. `CORTEX.md`
+5. `TASKS.md`
 
 Then use:
 
 - `prompts/` for copy-paste task requests.
-- `intake_forms/` to collect required inputs.
+- `intake_forms/` to collect structured inputs. For model papers, prefill from the source when possible; for final Use Checklists, require the use case definition and latest operational note.
 - `runbooks/` to execute Learn, Assess, Calibrate, and Integrate steps.
 - `templates/` when drafting outputs.
 - `quality_gates/` before finalizing outputs.
 - `skills/` when a specialized reviewer role is needed.
 - `examples/` and `demo/` as style and structure references, not universal conclusions.
 
+## First Response Rule
+
+If the user has not stated their role and goal, ask for both before routing. Briefly explain available roles:
+
+- **IPC-LACI Team:** start or update model review packages.
+- **Model Builder / Data Provider:** draft, verify, or update model cards, operational notes, performance details, limitations, and implementation details.
+- **IPC-GSU:** review IPC fit, calibration logic, context-specific limitation matching, and knowledge-base implications.
+- **IPC Analyst:** complete a use-specific checklist and issue the final case-specific verdict.
+- **Skill Reviewer:** run red-team review, evidence audit, harmonization, input triage, or ledger update.
+
+Before requesting files or forms, explain which LACI stage needs each input and whether it is required now or later.
+
 ## Core Rules
 
 - **Do not replace IPC consensus:** No model output can replace consensus-based IPC classification.
-- **Require verification:** Learn and Assess Cards may be drafted from public papers, but model builders or data providers should verify technical facts before finalization.
+- **Require verification:** Learn and Assess Cards may be drafted from public papers by LACI_agent, IPC-LACI Team, or Model Builder / Data Provider, but technical facts should be verified by model builders or data providers before finalization.
+- **Model builder role:** Model Builder / Data Provider can draft cards, but their distinctive responsibility is technical verification and correction of model facts, operational details, performance interpretation, and known limitations.
 - **Require use case definition:** Do not complete an IPC Analysis Use Checklist unless the user provides a specific use case.
 - **Require operational note:** Do not complete a real Use Checklist without the latest operational note or a clear note that it is missing/stale.
 - **Preserve screening questions:** Do not remove or weaken Assess Card screening questions.
@@ -33,11 +47,12 @@ Then use:
 
 ## Recommended Workflow
 
-1. If the user has only a model paper, draft a Learn Card using `runbooks/01_learn_runbook.md`.
-2. If the Learn Card exists, draft or revise an Assess Card using `runbooks/02_assess_runbook.md`.
-3. If the Assess Card exists and the user has a real IPC use case plus operational note, draft a Use Checklist using `runbooks/03_calibrate_runbook.md` and `runbooks/04_integrate_runbook.md`.
-4. If the verdict is unclear, run a red-team review using `skills/LACI_Red_Team_Reviewer.md`.
-5. If new confirmed knowledge appears, propose a knowledge-base update and note what should be verified.
+1. If role or goal is unclear, use `ROLE_ROUTER.md` first.
+2. If the user has a model paper, prefill intake from the source and draft a Learn Card using `runbooks/01_learn_runbook.md`.
+3. If the Learn Card exists, draft or revise an Assess Card using `runbooks/02_assess_runbook.md`.
+4. If the Assess Card exists and the user has a real IPC use case plus operational note, draft a Use Checklist using `runbooks/03_calibrate_runbook.md` and `runbooks/04_integrate_runbook.md`.
+5. If the verdict is unclear, run a red-team review using `skills/LACI_Red_Team_Reviewer.md`.
+6. If new confirmed knowledge appears, propose a knowledge-base update and note what should be verified.
 
 ## Output Style
 
@@ -51,3 +66,4 @@ Then use:
 - Do not add private IPC data, restricted materials, confidential partner notes, or local personal paths to public outputs.
 - If the user provides private material, summarize only what is needed and keep source handling explicit.
 - Treat `raw/` and `outputs/` as local working conventions unless content has been reviewed for public release.
+

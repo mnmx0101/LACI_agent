@@ -1,6 +1,6 @@
 ﻿# Agents And Skills
 
-This file maps LACI_agent tasks to the skill role cards in `skills/`.
+This file maps LACI_agent tasks to the skill role cards in `skills/`. Start with [ROLE_ROUTER.md](../ROLE_ROUTER.md) when user role or goal is unclear.
 
 ## Routing Map
 
@@ -18,3 +18,4 @@ This file maps LACI_agent tasks to the skill role cards in `skills/`.
 ## Assistant Rule
 
 When a task clearly belongs to a skill, the assistant should read the skill file first, then use the matching template, runbook, and quality gate.
+
