@@ -11,6 +11,15 @@
 
 ---
 
+## Key Status / Verification Flags
+
+- **Current status:** Draft / pending verification / verified / preliminary / not applicable
+- **Needs model-builder verification:** [List technical facts, performance claims, limitations, spatial/temporal metadata, or operational details requiring confirmation]
+- **Needs IPC-GSU review:** [List IPC-facing interpretation, calibration, threshold, or process-fit items requiring review]
+- **Needs operational note:** [List current-run/version/data cut-off/source-lag details needed, or state Not required for this stage]
+- **Needs use case definition:** [List use-case details needed for checklist/final verdict, or state Not required for this stage]
+- **Unknown / not found in source:** [List key unknowns explicitly]
+
 ## Part 1. Baseline Model-Output Assessment (Technical Screening & Initial Exclusion)
 
 *This section uses the full technical screening questions to provide flagged points that indicate whether a model-generated output should proceed to context-specific assessment. A failure in the Minimum Requirements Checklist acts as an initial exclusion criterion. Screening questions should not be removed, skipped, or weakened.*
@@ -322,24 +331,4 @@ Based on the baseline assessment and context-specific limitations, how should th
 | **Required cross-checks** | [List IPC evidence, local analyst checks, survey/admin data, field reports, partner information, or other signals needed before consideration.] |
 | **Required caveat in analyst materials** | [Exact text analysts should see.] |
 | **Strict non-use rule** | [Exact text describing what the output must not be used for.] |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -18,6 +18,9 @@ Optional inputs depending on goal:
 Before asking for optional inputs, explain which LACI stage needs them and whether they are required now or later.
 
 Requirements:
+- Use a bullet-first structure with **bold keyword labels**. Do not bury pending items, unknowns, or verification needs in paragraphs.
+- Include or preserve a **Key Status / Verification Flags** block near the top when drafting cards/checklists.
+- Each major section should make verification status, pending items, or unknowns clear.
 - Preserve all screening questions.
 - Document baseline performance values, metric definitions, what the values imply, and whether performance varies by geography, context, or prediction horizon.
 - Separate baseline assessment from context-specific limitation matching.

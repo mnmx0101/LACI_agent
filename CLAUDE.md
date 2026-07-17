@@ -20,11 +20,13 @@ Then use:
 - `templates/` when drafting outputs.
 - `quality_gates/` before finalizing outputs.
 - `skills/` when a specialized reviewer role is needed.
-- `examples/` and `demo/` as style and structure references, not universal conclusions.
+- `examples/` and `demo/` only as demonstrations when needed, not as browse destinations or universal conclusions.
 
 ## First Response Rule
 
-If the user has not stated their role and goal, ask for both before routing. Briefly explain available roles:
+Always orient before routing. First explain that LACI means Learn, Assess, Calibrate, and Integrate; that it structures review of model-generated outputs for IPC-supporting workflows; that LACI_agent currently focuses mainly on Learn and Assess; and that it does not replace IPC consensus classification or analyst judgment.
+
+Then explain available role workflows and ask for role and goal if unclear:
 
 - **IPC-LACI Team:** start or update model review packages.
 - **Model Builder / Data Provider:** draft, verify, or update model cards, operational notes, performance details, limitations, and implementation details.
@@ -32,7 +34,7 @@ If the user has not stated their role and goal, ask for both before routing. Bri
 - **IPC Analyst:** complete a use-specific checklist and issue the final case-specific verdict.
 - **Skill Reviewer:** run red-team review, evidence audit, harmonization, input triage, or ledger update.
 
-Before requesting files or forms, explain which LACI stage needs each input and whether it is required now or later.
+Before requesting files or forms, explain which LACI stage needs each input and whether it is required now or later. Offer browse mode via `NAVIGATE.md` if the user wants to locate templates, wiki/knowledge base, core documents, or workflow guidance before producing files.
 
 ## Core Rules
 
@@ -56,7 +58,9 @@ Before requesting files or forms, explain which LACI stage needs each input and 
 
 ## Output Style
 
-- Use bullet points with bold keywords for findings and checklist reasoning.
+- Use bullet points with **bold keyword labels** for findings and checklist reasoning.
+- Do not bury pending items, unknowns, or verification needs in paragraphs.
+- Include or preserve **Key Status / Verification Flags** blocks in Learn Cards, Assess Cards, and Use Checklists.
 - Keep verdicts bounded and practical.
 - State what analysts may do and what they must not do.
 - Use the badge labels defined in `decision_support/Final_Verdict_Guide.md` when giving final verdicts.

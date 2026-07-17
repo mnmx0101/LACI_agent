@@ -17,6 +17,9 @@ Optional inputs that may help now:
 Before asking for optional inputs, explain why they help and whether they are required now or later.
 
 Requirements:
+- Use a bullet-first structure with **bold keyword labels**. Do not bury pending items, unknowns, or verification needs in paragraphs.
+- Include or preserve a **Key Status / Verification Flags** block near the top when drafting cards/checklists.
+- Each major section should make verification status, pending items, or unknowns clear.
 - Do not require the user to manually fill `intake_forms/model_paper_intake.md` before starting. Prefill intake fields from the model paper where useful and mark gaps as unknowns or verification needs.
 - Use bullets with bold keywords where possible.
 - Record model output definition, target, spatial unit, temporal unit, prediction horizon, update frequency, input data, training labels, validation design, performance metrics, and known limitations.

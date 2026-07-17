@@ -2,9 +2,13 @@
 
 Use this page when you first open the repo or when you need to decide what to ask an AI assistant to do.
 
+## Current Scope
+
+LACI_agent currently focuses mainly on **Learn** and **Assess**. It can support Calibrate/Integrate preparation, but final checklist and verdict work require operational note, use case definition, current context, and human ownership.
+
 ## Start With Role And Goal
 
-Before routing to a template or form, identify the user role and goal. Use [ROLE_ROUTER.md](ROLE_ROUTER.md) if either is unclear.
+Before routing to a template or form, briefly explain LACI, the current Learn/Assess focus, and the role workflows. Then identify the user role and goal. Use [ROLE_ROUTER.md](ROLE_ROUTER.md) if either is unclear. Use [NAVIGATE.md](NAVIGATE.md) if the user wants to browse templates, knowledge base/wiki, core documents, or workflow guidance before starting.
 
 | Role | Common goals | First entry point |
 | :--- | :--- | :--- |

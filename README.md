@@ -1,12 +1,12 @@
 ﻿# LACI_agent
 
-**LACI_agent** is a public, **Cortex**-style agent workspace for developing, testing, and applying LACI: **Learn, Assess, Calibrate, and Integrate** model-generated outputs for IPC-supporting workflows. It gives AI assistants structured instructions, skills, templates, examples, and knowledge-base anchors so they can help users draft LACI artifacts consistently.
+**LACI_agent** is a public, **Cortex**-style agent workspace for developing, testing, and applying LACI: **Learn, Assess, Calibrate, and Integrate** model-generated outputs for IPC-supporting workflows. It gives AI assistants structured instructions, skills, templates, reference materials, and knowledge-base anchors so they can help users draft LACI artifacts consistently.
 
 This repository is intentionally flat: after cloning, the main content is visible immediately in the repo root.
 
 ## What is Cortex?
 
-**Cortex** is an organized working layer for AI-assisted work: the repo gives an assistant shared memory, task routes, role instructions, templates, prompts, examples, and quality checks so it can help users run LACI work in a consistent way.
+**Cortex** is an organized working layer for AI-assisted work: the repo gives an assistant shared memory, task routes, role instructions, templates, prompts, reference materials, and quality checks so it can help users run LACI work in a consistent way.
 
 The workspace usually has:
 
@@ -18,33 +18,37 @@ The workspace usually has:
 
 So, `LACI_agent` is called Cortex-style because it is designed to make an AI assistant operationally useful inside the LACI workflow, while keeping final IPC judgment with people.
 
+## Current Scope
+
+`LACI_agent` is currently strongest for **Learn** and **Assess** work: drafting, checking, and updating Learn Cards and Assess Cards from model papers, technical documentation, and operational details. It also includes early support for **Calibrate** and **Integrate**, but final checklist use and final verdicts require the latest operational note, a defined use case, current context, and human ownership.
+
 ## Start Here
 
 1. **Read this page first.** It is the main front door for the repo.
-2. **Identify role and goal:** open [ROLE_ROUTER.md](ROLE_ROUTER.md). LACI_agent should ask who is using the tool and what they want to do before routing to forms or templates.
-3. **Open the task entrypoint:** [ENTRY.md](ENTRY.md) helps you choose the right path after role and goal are clear.
-4. **Understand the operating concept:** [CORTEX.md](CORTEX.md) explains how this repo functions as an agent workspace rather than a standalone app.
-5. **Choose your assistant:**
+2. **Orient first:** LACI_agent should briefly explain LACI, the current Learn/Assess focus, and role workflows before asking who you are and what you want to do. Use [ROLE_ROUTER.md](ROLE_ROUTER.md).
+3. **Browse or start:** use [NAVIGATE.md](NAVIGATE.md) to locate core documents, templates, wiki/knowledge base, or workflow guidance before starting production work.
+4. **Open the task entrypoint:** [ENTRY.md](ENTRY.md) helps you choose the right path after role and goal are clear.
+5. **Understand the operating concept:** [CORTEX.md](CORTEX.md) explains how this repo functions as an agent workspace rather than a standalone app.
+6. **Choose your assistant:**
    - Claude users: read [CLAUDE.md](CLAUDE.md), then [setup/CLAUDE.md](setup/CLAUDE.md).
    - Codex users: read [AGENTS.md](AGENTS.md), then [setup/CODEX.md](setup/CODEX.md).
    - Cursor or other assistants: read [README.md](README.md), [ROLE_ROUTER.md](ROLE_ROUTER.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
-6. **Choose your task:**
+7. **Choose your task:**
    - IPC-LACI Team starting from scratch -> point to model paper/public documentation.
    - Model Builder / Data Provider -> draft, verify, or update cards and operational details.
    - IPC-GSU -> review IPC fit, calibration logic, and knowledge-base implications.
    - IPC Analyst -> complete Use Checklist and final case-specific verdict.
-7. **Use the working conventions:** put local inputs under `raw/` and local generated artifacts under `outputs/`. Keep private material out of public commits.
+8. **Use the working conventions:** put local inputs under `raw/` and local generated artifacts under `outputs/`. Keep private material out of public commits.
 
 ## Cortex-Style Operating Layer
 
-- **Entrypoints:** [ROLE_ROUTER.md](ROLE_ROUTER.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
+- **Entrypoints:** [ROLE_ROUTER.md](ROLE_ROUTER.md), [NAVIGATE.md](NAVIGATE.md), [ENTRY.md](ENTRY.md), [CORTEX.md](CORTEX.md), and [TASKS.md](TASKS.md).
 - **System playbooks:** [_system/](_system/) for install, phase-1 testing, agent/skill routing, and public-safety checks.
 - **Prompts:** [prompts/](prompts/) for copy-paste tasks across Codex, Claude, Cursor, ChatGPT, and similar tools.
 - **Intake forms:** [intake_forms/](intake_forms/) for structured collection. Model-paper intake can be assistant-prefilled; operational-note and use-case details are required for current-use checklist work.
 - **Runbooks:** [runbooks/](runbooks/) for the Learn, Assess, Calibrate, and Integrate stages.
 - **Quality gates:** [quality_gates/](quality_gates/) for pre-finalization checks.
 - **Local work areas:** [raw/](raw/) and [outputs/](outputs/) are conventions for local/private work, not public data dumps.
-- **Demo path:** [demo/](demo/) gives a first walkthrough.
 
 ## What Is LACI?
 
@@ -173,6 +177,7 @@ Before asking for files, LACI_agent should explain which LACI stage needs each i
 ## Repository Map
 
 - [Role Router](ROLE_ROUTER.md)
+- [Navigation](NAVIGATE.md)
 - [Entry](ENTRY.md)
 - [Cortex Operating Concept](CORTEX.md)
 - [Task Patterns](TASKS.md)
@@ -188,8 +193,6 @@ Before asking for files, LACI_agent should explain which LACI stage needs each i
 - [Skills / Role Cards](skills/)
 - [Partner Submission](partner_submission/)
 - [Decision Support](decision_support/)
-- [Examples](examples/)
-- [Demo](demo/)
 - [Sources](sources/)
 - [Local Raw Input Convention](raw/)
 - [Local Output Convention](outputs/)

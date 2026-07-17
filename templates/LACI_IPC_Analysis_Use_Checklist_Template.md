@@ -14,6 +14,15 @@
 | ![GREEN - Consider As Assessed](https://img.shields.io/badge/GREEN-Consider%20As%20Assessed-16a34a) | `GREEN - Consider As Assessed` | All gates pass for the defined use case. |
 | ![GRAY - Not Applicable](https://img.shields.io/badge/GRAY-Not%20Applicable-6b7280) | `GRAY - Not Applicable` | Output does not apply to the proposed IPC application/function. |
 
+## Key Status / Verification Flags
+
+- **Current status:** Draft / pending verification / verified / preliminary / not applicable
+- **Needs model-builder verification:** [List technical facts, performance claims, limitations, spatial/temporal metadata, or operational details requiring confirmation]
+- **Needs IPC-GSU review:** [List IPC-facing interpretation, calibration, threshold, or process-fit items requiring review]
+- **Needs operational note:** [List current-run/version/data cut-off/source-lag details needed, or state Not required for this stage]
+- **Needs use case definition:** [List use-case details needed for checklist/final verdict, or state Not required for this stage]
+- **Unknown / not found in source:** [List key unknowns explicitly]
+
 ## 1. Use Case Definition
 
 A checklist cannot be completed until the user provides this use case definition.
@@ -69,8 +78,4 @@ A checklist cannot be completed until the user provides this use case definition
 - **Classify:** Do not assign IPC phase from the model output.
 - **Cite:** Do not cite as direct IPC evidence unless explicitly authorized through LACI and IPC process.
 - **Estimate:** Do not use model exposure estimates as official IPC population estimates.
-
-
-
-
 

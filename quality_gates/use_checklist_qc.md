@@ -1,5 +1,8 @@
 ﻿# Use Checklist Quality Gate
 
+- [ ] **Key Status / Verification Flags present:** Current status, operational-note needs, use-case needs, unknowns, and pending items are visible near the top.
+- [ ] **Bullet-first reasoning:** Final verdict reasoning uses bullets with bold keyword labels.
+
 - [ ] **Use case definition present:** IPC application, working function, geography, time window, analyst action, and decision owner are stated.
 - [ ] **Latest operational note present:** Model version, run date, data cut-off, source lag, spatial unit, and temporal unit are checked.
 - [ ] **Context match completed:** Current conditions are compared against known limitations.
@@ -9,3 +12,4 @@
 - [ ] **Allowed/not-allowed actions:** Analyst-facing boundaries are explicit.
 - [ ] **Reassessment triggers:** Conditions requiring re-review are listed.
 - [ ] **No overclaiming:** The checklist supports decision-making but does not approve use outside the defined case.
+

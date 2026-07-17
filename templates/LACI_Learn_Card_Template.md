@@ -12,6 +12,15 @@
 
 ---
 
+## Key Status / Verification Flags
+
+- **Current status:** Draft / pending verification / verified / preliminary / not applicable
+- **Needs model-builder verification:** [List technical facts, performance claims, limitations, spatial/temporal metadata, or operational details requiring confirmation]
+- **Needs IPC-GSU review:** [List IPC-facing interpretation, calibration, threshold, or process-fit items requiring review]
+- **Needs operational note:** [List current-run/version/data cut-off/source-lag details needed, or state Not required for this stage]
+- **Needs use case definition:** [List use-case details needed for checklist/final verdict, or state Not required for this stage]
+- **Unknown / not found in source:** [List key unknowns explicitly]
+
 ## Part 1. Model Metadata, Output & Methodology
 
 ### A. Model Summary
@@ -154,19 +163,4 @@
 | **Primary IPC Application(s)** | [Which applications are deemed suitable enough to proceed to the Assess step?] |
 | **Special Routing Required?** | [e.g., Yes - route to Part 3 Special Rule in Assess Card, No] |
 | **GSU Notes / Caveats** | [Any additional context for the assessment team] |
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

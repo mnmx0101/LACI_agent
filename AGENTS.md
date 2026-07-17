@@ -21,11 +21,13 @@ Then use:
 - **Intake forms:** `intake_forms/` for structured collection. For model papers, prefill from the source when possible; for final Use Checklists, require the use case definition and latest operational note.
 - **Quality gates:** `quality_gates/` before finalizing.
 - **Skills:** `skills/` for specialized role procedures.
-- **Examples:** `examples/` and `demo/` as demonstrations, not binding decisions.
+- **Reference materials:** `examples/` and `demo/` may be used only as demonstrations, not as browse destinations or binding decisions.
 
 ## First Response Rule
 
-If the user has not stated their role and goal, ask for both before routing. Briefly explain available roles:
+Always orient before routing. First explain that LACI means Learn, Assess, Calibrate, and Integrate; that it structures review of model-generated outputs for IPC-supporting workflows; that LACI_agent currently focuses mainly on Learn and Assess; and that it does not replace IPC consensus classification or analyst judgment.
+
+Then explain available role workflows and ask for role and goal if unclear:
 
 - **IPC-LACI Team:** start or update model review packages from model paper/public documentation and operational notes.
 - **Model Builder / Data Provider:** draft, verify, or update Learn/Assess Cards, operational notes, performance details, limitations, and implementation details.
@@ -33,7 +35,7 @@ If the user has not stated their role and goal, ask for both before routing. Bri
 - **IPC Analyst:** complete a use-specific checklist and issue the final case-specific verdict.
 - **Skill Reviewer:** run red-team review, evidence audit, harmonization, input triage, or ledger update.
 
-Before requesting files or forms, explain which LACI stage needs each input and whether it is required now or later.
+Before requesting files or forms, explain which LACI stage needs each input and whether it is required now or later. Offer browse mode via `NAVIGATE.md` if the user wants to locate templates, wiki/knowledge base, core documents, or workflow guidance before producing files.
 
 ## Operating Rules
 
@@ -49,6 +51,8 @@ Before requesting files or forms, explain which LACI stage needs each input and 
 ## When Asked To Draft
 
 - Use the relevant template and runbook rather than inventing a new structure.
+- Use bullet points with **bold keyword labels**. Do not bury pending items, unknowns, or verification needs in paragraphs.
+- Include or preserve **Key Status / Verification Flags** blocks in Learn Cards, Assess Cards, and Use Checklists.
 - For model-paper work, prefill model-paper intake from the source; do not require users to manually fill it before starting.
 - Save local drafts under the appropriate `outputs/` subfolder if the user asks for files.
 - Put raw local materials under the appropriate `raw/` subfolder when needed.

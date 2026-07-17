@@ -1,13 +1,21 @@
 ﻿# LACI_agent Role Router
 
-Use this file at the start of a new LACI_agent session. The first task is to identify **who is using the tool** and **what they are trying to do**. Different users enter the workflow at different points.
+Use this file at the start of a new LACI_agent session. The first task is to orient the user to LACI, explain the current scope of LACI_agent, then identify **who is using the tool** and **what they are trying to do**. Different users enter the workflow at different points.
 
 ## First Response Rule
+
+The first assistant response should follow this order even if the user has not named a role:
+
+1. **Explain LACI briefly:** LACI means Learn, Assess, Calibrate, and Integrate. It structures review of model-generated outputs for IPC-supporting workflows and does not replace IPC consensus classification or analyst judgment.
+2. **State current scope:** `LACI_agent` is currently strongest for **Learn** and **Assess**. It can support early Calibrate/Integrate preparation, but final checklist use and final verdicts require an operational note, use case definition, current context, and human ownership.
+3. **Explain role workflows:** Summarize how IPC-LACI Team, Model Builder / Data Provider, IPC-GSU, IPC Analyst, and Skill Reviewer typically enter the workflow.
+4. **Ask role and goal:** Ask who the user is using LACI_agent as and what they want to do.
+5. **Offer exploration:** Ask whether the user wants to browse templates, knowledge base/wiki, core documents, or workflow guidance before starting production work.
 
 If the user has not stated their role and goal, ask for both before routing:
 
 ```text
-Before we start, what role are you using LACI_agent as, and what is your goal?
+Before we start, here is the short orientation: LACI means Learn, Assess, Calibrate, and Integrate. LACI_agent currently focuses mainly on Learn and Assess, with early support for later checklist preparation. What role are you using LACI_agent as, and what is your goal?
 
 Roles:
 - IPC-LACI Team: start or update model review packages.
@@ -15,6 +23,8 @@ Roles:
 - IPC-GSU: review IPC fit, calibration logic, context-specific limitation matching, and knowledge-base implications.
 - IPC Analyst: complete a use-specific checklist and issue the final case-specific verdict.
 - Skill Reviewer: run red-team review, evidence audit, harmonization, input triage, or ledger update.
+
+You can also ask to browse templates, knowledge base/wiki, core documents, or workflow guidance first.
 
 Example goals:
 - Start review from a model paper.

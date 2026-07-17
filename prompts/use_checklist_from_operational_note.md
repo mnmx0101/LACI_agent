@@ -16,6 +16,9 @@ Required inputs for final checklist work:
 Explain why these are required before asking for them: the use case defines the IPC application, geography, time window, intended analyst action, and decision owner; the operational note confirms the latest model run/version, data cut-off, lags, output labels, and spatial/temporal units; current context notes allow limitation matching.
 
 Requirements:
+- Use a bullet-first structure with **bold keyword labels**. Do not bury pending items, unknowns, or verification needs in paragraphs.
+- Include or preserve a **Key Status / Verification Flags** block near the top when drafting cards/checklists.
+- Each major section should make verification status, pending items, or unknowns clear.
 - If use case definition is missing, stop and request it.
 - If latest operational note is missing or stale, mark the checklist preliminary and recommend reassessment.
 - Compare current conditions against known model limitations.

@@ -1,11 +1,13 @@
 ﻿# LACI_agent Tasks
 
-Use these task patterns when asking an AI assistant to work in this repo. First identify the user role and goal with [ROLE_ROUTER.md](ROLE_ROUTER.md), then choose the task route.
+Use these task patterns when asking an AI assistant to work in this repo. First orient the user to LACI and the current Learn/Assess focus, then identify the user role and goal with [ROLE_ROUTER.md](ROLE_ROUTER.md). If the user wants to browse first, use [NAVIGATE.md](NAVIGATE.md).
 
 ## Common Tasks
 
 | Task | Required inputs | Main route | Expected output |
 | :--- | :--- | :--- | :--- |
+| Orient user | No input required | [ROLE_ROUTER.md](ROLE_ROUTER.md) | Brief explanation of LACI, current Learn/Assess focus, role workflows, and non-replacement rule |
+| Browse before starting | User interest area | [NAVIGATE.md](NAVIGATE.md) | Locate templates, knowledge base/wiki, core documents, or workflow guidance |
 | Identify role and goal | User role and goal statement | [ROLE_ROUTER.md](ROLE_ROUTER.md) | Correct workflow route and stage-specific input request |
 | Draft Learn Card | Model paper or technical documentation | [runbooks/01_learn_runbook.md](runbooks/01_learn_runbook.md) | Learn Card draft in `outputs/learn_cards/` |
 | Draft Assess Card | Learn Card, model paper, source evidence | [runbooks/02_assess_runbook.md](runbooks/02_assess_runbook.md) | Assess Card draft in `outputs/assess_cards/` |
