@@ -2,6 +2,20 @@
 
 `LACI_agent` is a Cortex-style agent workspace. It is not a standalone software application and it does not make IPC decisions by itself. It is an operating environment that helps AI assistants and human reviewers run LACI workflows consistently using shared instructions, templates, skills, examples, and knowledge-base anchors.
 
+## What Cortex Means
+
+In this repository, **Cortex** means the organized working layer that lets an AI assistant operate with context, procedure, and guardrails. It is similar to a shared project brain: not because it decides for people, but because it keeps the documents, skills, prompts, runbooks, examples, and quality checks in one place.
+
+A Cortex-style workspace answers five practical questions for the assistant and the user:
+
+- **What should I read first?** Entrypoints and core documents establish context.
+- **What task am I doing?** Task routes and prompts identify the LACI stage.
+- **How should I do it?** Runbooks, templates, and skills provide the method.
+- **How do I know it is good enough?** Quality gates and review roles define checks.
+- **When must a human decide?** Human gates keep IPC judgment, technical verification, and final verdicts with the appropriate people.
+
+For LACI_agent, Cortex-style means the repo is not just a library of documents. It is a structured workspace that helps Codex, Claude, Cursor, ChatGPT, or another assistant support LACI work consistently while preserving human review and IPC governance.
+
 ## Operating Concept
 
 - **Learn:** Convert model documentation into a structured Learn Card.
@@ -32,3 +46,4 @@
 ## Non-Replacement Rule
 
 No model output, including IPC Outcome Modeling or IPC-indicative outputs, replaces IPC consensus-based actual outcome classification. LACI_agent supports documentation, review, and decision support. It does not replace IPC protocols, analyst judgment, or authorized IPC governance.
+

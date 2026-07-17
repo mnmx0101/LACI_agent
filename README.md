@@ -4,6 +4,20 @@
 
 This repository is intentionally flat: after cloning, the main content is visible immediately in the repo root.
 
+## What Does Cortex Mean Here?
+
+In this repo, **Cortex** does not mean a separate software product. It means an organized working layer for AI-assisted work: the repo gives an assistant shared memory, task routes, role instructions, templates, prompts, examples, and quality checks so it can help users run LACI work in a consistent way.
+
+A Cortex-style workspace usually has:
+
+- **Context:** Core documents and knowledge-base anchors the assistant should understand.
+- **Procedures:** Runbooks, workflows, and quality gates that tell the assistant how to work.
+- **Skills:** Role-specific instructions for specialized review tasks.
+- **Inputs and outputs:** Clear places for raw materials and generated artifacts.
+- **Human gates:** Explicit points where IPC-LACI Team, IPC-GSU, model builders, or IPC analysts must verify, decide, or approve.
+
+So, `LACI_agent` is called Cortex-style because it is designed to make an AI assistant operationally useful inside the LACI workflow, while keeping final IPC judgment with people.
+
 ## Start Here
 
 1. **Read this page first.** It is the main front door for the repo.
@@ -168,6 +182,4 @@ This repository is intentionally flat: after cloning, the main content is visibl
 ## Data And Source Safety
 
 This repository is public. Do not commit confidential IPC analysis, restricted partner material, unpublished operational data, local machine paths, or private notes. The IPC Technical Manual is included as a core source reference only because the repository owner indicated the repo is public and requested inclusion.
-
-
 
